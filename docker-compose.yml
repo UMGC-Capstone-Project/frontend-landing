@@ -10,8 +10,8 @@ services:
     # volumes:
     #   - <path to config>:/config
     restart: unless-stopped
-    volumes:
-     - public:/usr/share/nginx/html
+    # volumes:
+    #   - ./public:/usr/share/nginx/html
     labels:
       - traefik.http.routers.minibook-frontend.rule=Host(`minibook.io`)
       - traefik.http.routers.minibook-frontend.tls=true
