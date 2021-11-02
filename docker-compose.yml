@@ -5,10 +5,10 @@ services:
     build: .
     image: minibook-nginx:latest
     container_name: minibook-nginx
-    environment:
-      - TZ=America/Detroit
-    volumes:
-      - ./custom:/usr/share/nginx/html
+    # environment:
+    #   - TZ=America/Detroit
+    # volumes:
+    #   - ./custom:/usr/share/nginx/html
     restart: unless-stopped
     labels:
       - traefik.http.routers.minibook-frontend.rule=Host(`minibook.io`)
