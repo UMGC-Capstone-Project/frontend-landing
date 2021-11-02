@@ -7,11 +7,9 @@ services:
     container_name: minibook-nginx
     environment:
       - TZ=America/Detroit
-    # volumes:
-    #   - <path to config>:/config
+    volumes:
+      - ./custom:/usr/share/nginx/html
     restart: unless-stopped
-    # volumes:
-    #   - ./public:/usr/share/nginx/html
     labels:
       - traefik.http.routers.minibook-frontend.rule=Host(`minibook.io`)
       - traefik.http.routers.minibook-frontend.tls=true
